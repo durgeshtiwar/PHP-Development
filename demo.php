@@ -1,17 +1,24 @@
-<?php
-$arr_1 = array("durgesh", 4, "Aditya", true);
-echo "<pre>";
-print_r($arr_1);
-$arr_2 = [
-  "durgesh" => 4,
-  "durgesh-1" => 5,
-  "durgesh-2" => 48,
-  "durgesh-3" => 40,
-  "durgesh-4" => 43,
-];
-echo "<pre>";
-print_r($arr_2);
-foreach($arr_2 as $num=>$numvalue)
-{
-  echo $num."=>".$numvalue, "\n";
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Form</title>
+</head>
+<body>
+    <h1>Contact Form</h1>
+    <form action="submit_form.php" method="POST">
+        <label for="name">Name:</label>
+        <br>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+        <br><br>
+        
+        <label for="email">Email:</label>
+        <br>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+        <br><br>
+        
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
