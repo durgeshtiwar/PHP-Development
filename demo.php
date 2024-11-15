@@ -1,24 +1,17 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Form</title>
+    <title>File Upload Form</title>
 </head>
 <body>
-    <h1>Contact Form</h1>
-    <form action="submit_form.php" method="POST">
-        <label for="name">Name:</label>
-        <br>
-        <input type="text" id="name" name="name" placeholder="Enter your name" required>
-        <br><br>
-        
-        <label for="email">Email:</label>
-        <br>
-        <input type="email" id="email" name="email" placeholder="Enter your email" required>
-        <br><br>
-        
-        <button type="submit">Submit</button>
+    <h2>Upload a File</h2>
+    <form method="POST" action = "submit_form.php" enctype="multipart/form-data">
+        <label for="file">Choose a file:</label>
+        <input type="file" id="file" name="filename" required>
+        <button type="submit" name = "submit" value = "SUBMIT" >Upload</button>
     </form>
 </body>
 </html>
