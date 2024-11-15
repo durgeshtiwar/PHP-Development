@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +6,14 @@
     <title>File Upload Form</title>
 </head>
 <body>
+    <?php
+    session_start();
+    if (isset($_SESSION['user'])) {
+        $_SESSION['userVisit'] = 1;
+        echo "<h1>Aaiye Aaiye !</h1>";
+        echo "<h1>".$_SESSION['user']." Bhai Form to bher do</h1>";
+    }
+    ?>
     <h2>Upload a File</h2>
     <form method="POST" action = "submit_form.php" enctype="multipart/form-data">
         <label for="file">Choose a file:</label>
