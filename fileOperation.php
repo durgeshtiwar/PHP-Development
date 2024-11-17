@@ -8,6 +8,7 @@ $fileName = "context.txt";
 // }else{
 //   echo "File Opening Error";
 // }
+
 $file = fopen($fileName, "r");
 $size = filesize($fileName);
 echo $size;
