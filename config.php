@@ -22,7 +22,7 @@ $password = null;
 try {
   $conn = new PDO("mysql:host=$host; dbname=college",$username,$password);
   $conn->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
-  echo "<h1>Connection done Successfully</h1>";
+  //echo "<h1>Connection done Successfully</h1>";
 } catch (PDOException $err) {
   echo "Connection Faild". $err->getMessage();
 }
