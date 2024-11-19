@@ -34,5 +34,27 @@ if (isset($_GET['id_'])) {
   <input type="text"  name="city" value = "<?php echo $city?>" ><br><br>
   <label for="name">Year:</label>
   <input type="text"  name="year" value = "<?php echo $year?>" ><br><br>
-  <button>Update Student Data</button>
+  <button value = <?php echo $id?> name = 'update' >Update Student Data</button>
 </form>
+<?php
+if (isset($_POST['update'])) {
+  $name = $_POST['name'];
+  $course = $_POST['course'];
+  $batch = $_POST['batch'];
+  $city = $_POST['city'];
+  $year = $_POST['year'];
+  $updateStudentData = $conn->prepare("update students set 
+  name = '$name',
+  course = '$course',
+  batch = '$batch',
+  city = '$city',
+  year = '$year'
+  where id = '$id'");
+  if($updateStudentData->execute())
+  {
+    header("Location:read.php");
+  }else{
+    echo "<h1>Updated Unsuccessfully;</h1>";
+  }
+}
+?>
