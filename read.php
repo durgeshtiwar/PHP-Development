@@ -20,7 +20,18 @@ foreach($students as $std)
   <td>".$std['batch']."</td>
   <td>".$std['city']."</td>
   <td>".$std['year']."</td>
-  
-  </tr>";
+  <td><form  method = 'post'>
+  <button name = delete value = ".$std['id']." >Delete</button>
+  </form></td>
+  <tr>";
 }
 echo"</Table>";
+if (isset($_POST['delete'])) {
+  $id = $_POST['delete'];
+  $getStudent = $conn->prepare("delete from students where id ='$id'");
+  if ($getStudent->execute()) {
+    echo "<h1>Record Deleted;</h1>";
+  }else{
+    echo "<h1>Failed</h1>";
+  }
+}
