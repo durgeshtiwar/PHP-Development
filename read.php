@@ -23,6 +23,7 @@ foreach($students as $std)
   <td><form  method = 'post'>
   <button name = delete value = ".$std['id']." >Delete</button>
   </form></td>
+  <td><a href='dropdown.php? id = ".$std['id']."'>Edit</a></td>
   <tr>";
 }
 echo"</Table>";
