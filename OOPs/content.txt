@@ -9,3 +9,4 @@
 9.Late Static Binding
 10.Abstract classes
 11.Interface
+12.Traits
