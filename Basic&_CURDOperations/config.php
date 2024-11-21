@@ -17,7 +17,7 @@
 
 $host = "localhost";
 $username = "root";
-$password = null;
+$password = "Durgesh@1419";
 
 try {
   $conn = new PDO("mysql:host=$host; dbname=college",$username,$password);
