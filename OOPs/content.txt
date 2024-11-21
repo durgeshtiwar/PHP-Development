@@ -9,4 +9,10 @@
 9.Late Static Binding
 10.Abstract classes
 11.Interface
-12.Traits
+12.Traits, Traits Overriding
+13.Namespace
+14.Type Hinting
+15.Method Chaining
+16.MySQL with OOPs
+17.Magic Method - 
+__invoke Method, __get, __set, __call
