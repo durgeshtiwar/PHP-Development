@@ -8,8 +8,8 @@
 </head>
 <body>
   <?php
-  include_once("header.php");
+  include_once("insertForm.php");
+  include_once("tableData.php");
   ?>
-  
 </body>
 </html>
