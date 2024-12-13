@@ -1,5 +1,10 @@
-<div class = "container">
-  <div>
+<?php
+include_once("config.php");
+include_once("popup.php");
+$query = "SELECT * FROM user_details";
+$getUsers = $conn->query($query);
+echo "<div class = 'container'>";
+echo "<div>
   <table>
         <thead>
             <tr>
@@ -17,27 +22,30 @@
                 <th>DOB</th>
                 <th>Action</th>
             </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>John Doe</td>
-                <td>123-456-7890</td>
-                <td>johndoe@example.com</td>
-                <td><button class="action-btn">Edit</button></td>
-            </tr>
-            <tr>
-                <td>Jane Smith</td>
-                <td>987-654-3210</td>
-                <td>janesmith@example.com</td>
-                <td><button class="action-btn">Edit</button></td>
-            </tr>
-            <tr>
-                <td>Mike Johnson</td>
-                <td>555-123-4567</td>
-                <td>mikejohnson@example.com</td>
-                <td><button class="action-btn">Edit</button></td>
-            </tr>
-        </tbody>
+        </thead>";
+    echo "<tbody>";
+    while ($row = $getUsers->fetch_assoc()) {
+            echo "<tr>
+                <td>{$row['name']}</td>
+                <td>{$row['mobile']}</td>
+                <td>{$row['email']}</td>
+                <td>{$row['address']}</td>
+                <td>{$row['role']}</td>
+                <td>{$row['designation']}</td>
+                <td>{$row['gender']}</td>
+                <td><a href='upload/{$row['file']}' target='_blank'>View File</a></td>
+                <td>{$row['status']}</td>
+                <td>{$row['age']}</td>
+                <td>{$row['marital_status']}</td>
+                <td>{$row['dob']}</td>
+                <td>
+                <button type='button' class='btn btn-success mb-3' data-bs-toggle='modal' data-bs-target='#updateModal'>
+                 <i class='fas fa-edit'></i>
+                </button>
+                </td>
+              </tr>";}
+    echo"</tbody>
     </table>
   </div>
-</div>
+</div>";
+?>
