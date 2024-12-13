@@ -1,10 +1,8 @@
-<!-- Insert Data in Form -->
- 
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Create New Account</h1>
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Update Team Details</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
@@ -83,33 +81,9 @@
               <input type="date" id="dob" name="dob" required>
             </div>
             </div>
-            <button type="submit" name="insert" class="submit-btn">Add Team</button>
+            <button type="submit" name ="update" class="submit-btn">Update</button>
         </form>
     </div>
-      </div>
-      
-    </div>
-  </div>
-</div>
-
-<!-- Update Data in Form -->
-
-
-<!-- delete Data  -->
-
-<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Are You Sure For Delete This Record</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body delete">
-      <form action="" method = 'post'>
-      <button type="submit" name="confirm_delete" value="<?php echo $_POST['data-id']?>" class="btn btn-danger">Delete</button>
-
-      </form>
-      <button type="button" class="btn btn-info">Cancel</button>
       </div>
       
     </div>

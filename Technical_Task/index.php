@@ -10,6 +10,7 @@
   <?php
   include_once("header.php");
   include_once("tableData.php");
+  include_once("update.php");
   ?>
 </body>
 </html>

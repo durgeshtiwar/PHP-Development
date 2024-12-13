@@ -64,6 +64,12 @@ if (isset($_POST['insert']) ) {
 
 // Update data 
 if (isset($_POST['update'])) {
+  $id = $_POST['update'];
+ 
+  // $getUsers = $conn->prepare("SELECT * FROM user_details where id = $id");
+  // $getUsers->execute();
+  // $users = $getUsers->get_result();
+  // print_r($users);
   $name = $_POST['fullname'];
   $mobile = $_POST['mobile'];
   $email = $_POST['email'];
@@ -76,7 +82,7 @@ if (isset($_POST['update'])) {
   $marital_status = $_POST['marital_status'];
   $dob = $_POST['dob'];
 
-  // file uploade
+  //file uploade
   if (isset($_FILES['file']) && $_FILES['file']['error'] == 0) {
     $fileName = $_FILES['file']['name'];
     $file_temp = $_FILES['file']['tmp_name'];
@@ -130,6 +136,19 @@ if (isset($_POST['update'])) {
   }
 }
 
+//Delete
+if (isset($_POST['delete'])) {
+  $id = $_POST['delete'];
+  $getUser = $conn->prepare("delete from user_details where id ='$id'");
+  if ($getUser->execute()) {
+    header("Location: index.php");
+    exit();
+  }else{
+    echo "<h1>Failed</h1>";
+  }
+}
+// }
+ 
 
 ?>
 

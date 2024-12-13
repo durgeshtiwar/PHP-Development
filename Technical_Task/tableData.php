@@ -1,10 +1,11 @@
 <?php
 include_once("config.php");
 include_once("popup.php");
-$query = "SELECT * FROM user_details";
-$getUsers = $conn->query($query);
-echo "<div class = 'container'>";
-echo "<div>
+$getUsers = $conn->prepare("SELECT * FROM user_details ");
+$getUsers->execute();
+$users = $getUsers->get_result();?>
+<div class = 'container'>
+<div>
   <table>
         <thead>
             <tr>
@@ -22,47 +23,42 @@ echo "<div>
                 <th>DOB</th>
                 <th>Action</th>
             </tr>
-        </thead>";
-    echo "<tbody>";
-    while ($row = $getUsers->fetch_assoc()) {
-            $id = $row['id'];
-            echo "<tr>
-                <td>{$row['name']}</td>
-                <td>{$row['mobile']}</td>
-                <td>{$row['email']}</td>
-                <td>{$row['address']}</td>
-                <td>{$row['role']}</td>
-                <td>{$row['designation']}</td>
-                <td>{$row['gender']}</td>
-                <td><a href='upload/{$row['file']}' target='_blank'>View File</a></td>
-                <td>{$row['status']}</td>
-                <td>{$row['age']}</td>
-                <td>{$row['marital_status']}</td>
-                <td>{$row['dob']}</td>
+        </thead>
+    <tbody><?php
+    foreach($users as $row) {
+      ?>
+                <tr>
+                <td><?php echo $row['name'] ?></td>
+                <td><?php echo $row['mobile']?></td>
+                <td><?php echo $row['email']?></td>
+                <td><?php echo $row['address']?></td>
+                <td><?php echo $row['role']?></td>
+                <td><?php echo $row['designation']?></td>
+                <td><?php echo $row['gender']?></td>
+                <?php
+                echo "<td><a href='upload/{$row['file']}' target='_blank'>View File</a></td>";
+                ?>
+                <td><?php echo $row['status']?></td>
+                <td><?php echo $row['age']?></td>
+                <td><?php echo $row['marital_status']?></td>
+                <td><?php echo $row['dob']?></td>
                 <td>
+               
                 <button type='button' class='btn btn-success mb-3' data-bs-toggle='modal' 
                  data-bs-target='#updateModal'>
                  <a><i class='fas fa-edit'></i>
+                 <form method="post" action="request.php">
+                <button name="delete" value="<?php echo htmlspecialchars($row['id']); ?>" 
+                        type="submit" class="btn btn-danger mb-3">
+                    <i class="fas fa-trash"></i>
                 </button>
-                 <button type='button' class='btn btn-danger mb-3' data-bs-toggle='modal' 
-                 data-bs-target='#deleteModal'>
-                 <a><i class='fas fa-trash'></i>
-                </button>
-                </td>
+                 </form>
+                <?php
+
+                echo "</td>
               </tr>";}
     echo"</tbody>
     </table>
   </div>
 </div>";
-
-if (isset($_POST['delete'])) {
-    print_r($_POST);
-  $id = $_POST['delete'];
-  $getUser = $conn->prepare("delete from user_details where id ='$id'");
-  if ($getUser->execute()) {
-    header("Location:index.php");
-  }else{
-    echo "<h1>Failed</h1>";
-  }
-}
 ?> 
