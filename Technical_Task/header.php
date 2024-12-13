@@ -6,8 +6,8 @@ include_once("popup.php");
 <nav class="navbar navbar-expand-lg bg-body-tertiary header">
   <div class="container">
     <div>
-      <h1>Team</h1>
-      <h4>Dashboard</h4><p>All Team</p>
+      <h1 style = "color : white">Team</h1>
+      <h4 style = "color : white">Dashboard</h4><p style = "color : white">All Team</p>
     </div>
     <div>
     <button type="button" class="btn btn-success mb-3" data-bs-toggle="modal" data-bs-target="#exampleModal">

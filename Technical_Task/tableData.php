@@ -25,6 +25,7 @@ echo "<div>
         </thead>";
     echo "<tbody>";
     while ($row = $getUsers->fetch_assoc()) {
+            $id = $row['id'];
             echo "<tr>
                 <td>{$row['name']}</td>
                 <td>{$row['mobile']}</td>
@@ -39,8 +40,13 @@ echo "<div>
                 <td>{$row['marital_status']}</td>
                 <td>{$row['dob']}</td>
                 <td>
-                <button type='button' class='btn btn-success mb-3' data-bs-toggle='modal' data-bs-target='#updateModal'>
-                 <i class='fas fa-edit'></i>
+                <button type='button' class='btn btn-success mb-3' data-bs-toggle='modal' 
+                 data-bs-target='#updateModal'>
+                 <a><i class='fas fa-edit'></i>
+                </button>
+                 <button type='button' class='btn btn-danger mb-3' data-bs-toggle='modal' 
+                 data-bs-target='#deleteModal'>
+                 <a><i class='fas fa-trash'></i>
                 </button>
                 </td>
               </tr>";}
@@ -48,4 +54,15 @@ echo "<div>
     </table>
   </div>
 </div>";
-?>
+
+if (isset($_POST['delete'])) {
+    print_r($_POST);
+  $id = $_POST['delete'];
+  $getUser = $conn->prepare("delete from user_details where id ='$id'");
+  if ($getUser->execute()) {
+    header("Location:index.php");
+  }else{
+    echo "<h1>Failed</h1>";
+  }
+}
+?> 
