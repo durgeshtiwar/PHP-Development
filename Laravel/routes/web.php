@@ -21,3 +21,4 @@ Route::get('/home', function () {
 });
 Route::get('/user',[UserController::class,'userHome']);
 Route::get('/getName/{name}',[UserController::class,'getName']);
+Route::post('submit',[UserController::class,'userForm']);

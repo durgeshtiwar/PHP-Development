@@ -1,17 +1,17 @@
-<h1>Welcom Page</h1>
-<x-message-banner msg="User Login Successfully" class="success"/>
-<x-message-banner msg="User Logout Successfully" class="success"/>
-<x-message-banner msg="Some Error Ocured" class="error"/>
-<x-message-banner msg="Some Warning Ocured" class="warning"/>
+<h1>Form</h1>
 
-<style>
-    .success{
-        color : green;
-    }
-    .error{
-        color : red;
-    }
-    .warning{
-        color : yellow;
-    }
-</style>
+<form action="submit" method="POST">
+    @csrf
+    <!-- Name Field -->
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" placeholder="Enter your name" required>
+    <br><br>
+
+    <!-- Email Field -->
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+    <br><br>
+
+    <!-- Submit Button -->
+    <button type="submit">Submit</button>
+  </form>
