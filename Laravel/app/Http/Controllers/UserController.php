@@ -21,7 +21,16 @@ class UserController extends Controller
         return view('home',['name'=>$name,'users'=>$users]);
     }
     function userForm(request $request)
-    {
+    { 
+        $request->validate([
+            'name'=>'required|min:3|max:10',
+            'email'=>'required',
+            'city'=>'required|uppercase'
+        ],
+        [
+            'city.uppercase'=>'city should be in uppercase'
+        ]
+    );
         return $request;
     }
 }
