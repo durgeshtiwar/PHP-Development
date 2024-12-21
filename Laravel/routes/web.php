@@ -13,12 +13,19 @@ use App\Http\Controllers\UserController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 Route::get('/home', function () {
     return view('home');
 });
-Route::get('/user',[UserController::class,'userHome']);
+
 Route::get('/getName/{name}',[UserController::class,'getName']);
 Route::post('submit',[UserController::class,'userForm']);
+
+Route::prefix('student')->group(function()
+{
+    Route::get('/', function () {
+        return view('welcome');
+    });
+    Route::get('/user',[UserController::class,'userHome']);
+
+});
