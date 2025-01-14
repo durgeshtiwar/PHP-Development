@@ -20,6 +20,19 @@ i{
   color: white;
   padding: 5px;
 }
+button{
+  background-color: blue;
+  color: white;
+  font-weight: bold;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+}
+button:hover{
+  background-color: rgb(117, 117, 244);
+  cursor: pointer;
+  color: black;
+}
 .fa-heart{
   color: red;
 }
@@ -58,7 +71,6 @@ i{
     border-radius: 20px;
   }
 }
-
 .footer{
   text-align: center;
 }
