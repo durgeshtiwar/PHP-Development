@@ -2,11 +2,29 @@ body{
   background-color: rgb(210, 208, 208);
 }
 img{
-  width: 700px;
+  width: 97%;
   height: 130px;
   border: none;
   border-radius: 5px;
 }
+@media(max-width:767px)
+{
+  .main{
+  height: auto;
+  background-color: white;
+  margin: 20px;
+  border: none;
+  border-radius: 10px;
+  }
+  img{
+    width: 97%;
+  height: 130px;
+  border: none;
+  border-radius: 5px;
+  }
+}
+@media(min-width:767px)
+{
 .main{
   height: auto;
   background-color: white;
@@ -15,9 +33,9 @@ img{
   margin-right: 250px;
   border: none;
   border-radius: 10px;
-}
+}}
 .nav{
-  text-align: center;
+  /* text-align: center; */
   padding: 20px;
   padding-bottom: 0;
 }
@@ -40,8 +58,13 @@ button{
   color: white;
   font-weight: bold;
   background-color: rgb(6, 6, 75);
-  border: 1px solid black;
+  border: none;
   border-radius: 5px;
+}
+button:hover{
+  background-color: rgb(15, 15, 160);
+  color: black;
+  cursor: pointer;
 }
 a{
   text-decoration: none;
