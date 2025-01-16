@@ -36,7 +36,7 @@ $users = $getUsers->get_result();?>
                 <td><?php echo $row['designation']?></td>
                 <td><?php echo $row['gender']?></td>
                 <?php
-                echo "<td><a href='upload/{$row['file']}' target='_blank'>View File</a></td>";
+                echo "<td><img src='upload/{$row['file']}' target='_blank'></img></td>";
                 ?>
                 <td><?php echo $row['status']?></td>
                 <td><?php echo $row['age']?></td>

@@ -99,3 +99,9 @@ th {
   display: flex;
   gap: 250px;
 }
+img{
+  width: 100px;
+  height: 100px;
+  border: 1px solid rgb(66, 63, 63);
+  border-radius: 50%;
+}

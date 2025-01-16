@@ -42,7 +42,7 @@ include_once("request.php");
       <input type="text" placeholder="Enter Your name" name="name" required><br><br>
       <input type="email" placeholder="Enter Your email" name="email" required><br><br>
       <input type="text" placeholder="Enter Your phone" name="phone no." required><br><br>
-      <textarea name="message" placeholder="Enter messages here....."></textarea><br><br>
+      <textarea name="message" placeholder="Enter messages here....." required></textarea><br><br>
       <button type="submit">SignUp</button>
       </form>
     </div>
