@@ -1,0 +1,37 @@
+--Categories Table
+CREATE TABLE categories (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    parent_id INT DEFAULT NULL, -- NULL for main categories
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (parent_id) REFERENCES categories(id) ON DELETE CASCADE
+);
+
+-- Products Table
+CREATE TABLE products (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    description TEXT,
+    price DECIMAL(10, 2) NOT NULL,
+    category_id INT NOT NULL,
+    image_path VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (category_id) REFERENCES categories(id) ON DELETE CASCADE
+);
+
+
+-- Insert Categories and Subcategories
+INSERT INTO categories (name, parent_id) VALUES
+('Electronics', NULL),
+('Mobiles', 1),
+('Laptops', 1),
+('Fashion', NULL),
+('Men', 4),
+('Women', 4);
+
+-- Insert Products
+INSERT INTO products (name, description, price, category_id, image_path) VALUES
+('iPhone 14', 'Latest Apple iPhone', 999.99, 2, '/images/iphone14.jpg'),
+('MacBook Pro', 'Apple laptop', 1999.99, 3, '/images/macbook.jpg'),
+('T-Shirt', 'Cotton T-Shirt for Men', 19.99, 5, '/images/tshirt.jpg'),
+('Dress', 'Elegant Dress for Women', 49.99, 6, '/images/dress.jpg');

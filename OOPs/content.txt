@@ -1,18 +1,1 @@
-1.Object and classes
-2.Properties and Methods
-3.Constructor
-4.Inheritance
-5.Access Modifiers
-6.Constants
-7.Final Keyword
-8.Static Method and Property
-9.Late Static Binding
-10.Abstract classes
-11.Interface
-12.Traits, Traits Overriding
-13.Namespace
-14.Type Hinting
-15.Method Chaining
-16.MySQL with OOPs
-17.Magic Method - 
-__invoke Method, __get, __set, __call
+Somthing that is related to php
